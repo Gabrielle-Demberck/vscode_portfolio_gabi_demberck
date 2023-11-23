@@ -21,7 +21,7 @@ class _BodyWidgetState extends State<BodyWidget> {
     return Row(
       children: [
         Container(
-          padding: const EdgeInsets.symmetric(vertical: 30),
+          padding: const EdgeInsets.only(top: 30),
           height: size.height,
           width: 57,
           color: const Color(0xff343746),

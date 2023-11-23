@@ -60,6 +60,53 @@ class _VsCodePageState extends State<VsCodePage> {
         ),
       ),
       body: const BodyWidget(),
+      bottomNavigationBar: Container(
+        color: const Color(0xff1e1f29),
+        height: 25,
+        child: const Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                Icon(
+                  Icons.vertical_align_center_sharp,
+                  size: 15,
+                ),
+                Text('main'),
+                Icon(
+                  Icons.highlight_remove_sharp,
+                  size: 15,
+                ),
+                Text('0'),
+                Icon(
+                  Icons.warning_amber_sharp,
+                  size: 15,
+                ),
+                Text('0'),
+              ],
+            ),
+            Row(
+              children: [
+                Icon(
+                  Icons.vertical_align_center_sharp,
+                  size: 15,
+                ),
+                Text('main'),
+                Icon(
+                  Icons.highlight_remove_sharp,
+                  size: 15,
+                ),
+                Text('0'),
+                Icon(
+                  Icons.alarm,
+                  size: 15,
+                ),
+                Text('0'),
+              ],
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

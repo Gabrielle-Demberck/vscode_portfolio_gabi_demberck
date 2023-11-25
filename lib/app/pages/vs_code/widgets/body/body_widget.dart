@@ -14,11 +14,11 @@ class _BodyWidgetState extends State<BodyWidget> {
   final pageController = PageController(initialPage: 0);
   final iconsMenuItems = {
     'home.dart': Icons.copy,
-    'about.dart': Icons.person_pin_circle_outlined,
-    'contact.css': Icons.account_tree_outlined,
+    'about.css': Icons.person_pin_circle_outlined,
+    'contact.js': Icons.account_tree_outlined,
     'projects.js': Icons.perm_phone_msg_sharp,
-    'github.json': Icons.auto_awesome_mosaic_outlined
   };
+  int tappedSideIcon = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -39,9 +39,14 @@ class _BodyWidgetState extends State<BodyWidget> {
                     itemCount: iconsMenuItems.length,
                     itemBuilder: (context, index) {
                       return SideMenuIconButton(
-                        isSelected: pageController.page == index.toDouble(),
+                        isSelected: tappedSideIcon == index,
                         icon: iconsMenuItems.values.toList().elementAt(index),
-                        onTap: () {},
+                        onTap: () {
+                          setState(() {
+                            tappedSideIcon = index;
+                          });
+                          pageController.jumpToPage(index);
+                        },
                       );
                     },
                   ),
@@ -49,7 +54,9 @@ class _BodyWidgetState extends State<BodyWidget> {
                 Column(
                   children: [
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        pageController.jumpToPage(1);
+                      },
                       icon: const Icon(Icons.person_2_rounded),
                     ),
                     IconButton(

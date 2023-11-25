@@ -5,12 +5,14 @@ class TabsWidget extends StatefulWidget implements PreferredSizeWidget {
   final bool isSelected;
   final PageController pageController;
   final List<String> tabs;
+  final int currentPage;
 
   const TabsWidget({
     super.key,
     required this.isSelected,
     required this.pageController,
     required this.tabs,
+    required this.currentPage,
   });
   @override
   Size get preferredSize => const Size.fromHeight(40);
@@ -27,10 +29,10 @@ class _TabsWidgetState extends State<TabsWidget> {
       itemBuilder: (context, index) {
         return GestureDetector(
           onTap: () {
-            widget.pageController.jumpTo((index + 1).toDouble());
+            widget.pageController.jumpToPage(index);
           },
           child: TabItemWidget(
-            isSelected: widget.pageController.page == index.toDouble(),
+            isSelected: widget.currentPage == index.toDouble(),
             label: widget.tabs[index],
           ),
         );

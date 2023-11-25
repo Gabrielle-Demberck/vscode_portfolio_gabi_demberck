@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'pages/vs_code/vs_code_page.dart';
+import 'utils/scroll_behavior.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -8,6 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      scrollBehavior: AppScrollBehavior(),
       title: 'VsCode Portfolio',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(

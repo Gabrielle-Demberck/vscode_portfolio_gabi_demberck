@@ -19,12 +19,19 @@ class _TabItemWidgetState extends State<TabItemWidget> {
     return Row(children: [
       Container(
         decoration: BoxDecoration(
+          color:
+              widget.isSelected ? const Color(0xff282a36) : Colors.transparent,
           border: Border(
             top: BorderSide(
-                color: widget.isSelected ? Colors.blue : Colors.white12,
-                width: 2),
-            left: const BorderSide(color: Colors.white12),
-            right: const BorderSide(color: Colors.white12),
+              color: widget.isSelected ? Colors.blue : Colors.black12,
+              width: widget.isSelected ? 2 : 1,
+            ),
+            left: const BorderSide(
+              color: Colors.black12,
+            ),
+            right: const BorderSide(
+              color: Colors.black12,
+            ),
           ),
         ),
         height: 40,
@@ -44,10 +51,6 @@ class _TabItemWidgetState extends State<TabItemWidget> {
                 widget.label,
               ),
             ),
-            const Icon(
-              Icons.close_outlined,
-              size: 15,
-            )
           ],
         ),
       )

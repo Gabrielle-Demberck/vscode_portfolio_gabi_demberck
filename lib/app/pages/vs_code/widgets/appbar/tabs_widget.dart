@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'appbar/tab_item_widget.dart';
+import 'tab_item_widget.dart';
 
 class TabsWidget extends StatefulWidget implements PreferredSizeWidget {
   final bool isSelected;

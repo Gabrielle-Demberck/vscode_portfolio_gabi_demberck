@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'widgets/body_widget.dart';
+import 'widgets/body/body_widget.dart';
 
 class VsCodePage extends StatefulWidget {
   const VsCodePage({super.key});

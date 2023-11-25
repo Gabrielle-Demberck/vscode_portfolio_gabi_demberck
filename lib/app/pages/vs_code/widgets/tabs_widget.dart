@@ -21,22 +21,29 @@ class TabsWidget extends StatefulWidget implements PreferredSizeWidget {
 }
 
 class _TabsWidgetState extends State<TabsWidget> {
+  final listViewController = ScrollController();
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: widget.tabs.length,
-      scrollDirection: Axis.horizontal,
-      itemBuilder: (context, index) {
-        return GestureDetector(
-          onTap: () {
-            widget.pageController.jumpToPage(index);
-          },
-          child: TabItemWidget(
-            isSelected: widget.currentPage == index.toDouble(),
-            label: widget.tabs[index],
-          ),
-        );
-      },
+    return Scrollbar(
+      controller: listViewController,
+      thickness: 5,
+      interactive: true,
+      child: ListView.builder(
+        controller: listViewController,
+        itemCount: widget.tabs.length,
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) {
+          return GestureDetector(
+            onTap: () {
+              widget.pageController.jumpToPage(index);
+            },
+            child: TabItemWidget(
+              isSelected: widget.currentPage == index.toDouble(),
+              label: widget.tabs[index],
+            ),
+          );
+        },
+      ),
     );
   }
 }

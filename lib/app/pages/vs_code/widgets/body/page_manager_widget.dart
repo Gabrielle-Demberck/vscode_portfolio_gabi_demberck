@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../../about/about_page.dart';
+import '../../../home/home_page.dart';
 import '../appbar/tabs_widget.dart';
 
 class PageManagerWidget extends StatefulWidget {
@@ -34,25 +36,8 @@ class _PageManagerWidgetState extends State<PageManagerWidget> {
               controller: widget.controller,
               physics: const NeverScrollableScrollPhysics(),
               children: [
-                Container(
-                  decoration: const BoxDecoration(
-                    border: Border(
-                      top: BorderSide(
-                          width: 0.5,
-                          color: Color(0xff282a36),
-                          strokeAlign: BorderSide.strokeAlignInside),
-                      left: BorderSide(
-                        color: Colors.black12,
-                        width: 0.5,
-                      ),
-                      right: BorderSide(
-                        color: Colors.black12,
-                        width: 0.5,
-                      ),
-                    ),
-                  ),
-                ),
-                Container(color: Colors.transparent),
+                const HomePage(),
+                const AboutPage(),
                 Container(),
                 Container(color: Colors.transparent),
                 Container(color: Colors.transparent),

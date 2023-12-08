@@ -6,6 +6,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 50),
@@ -57,7 +58,14 @@ class HomePage extends StatelessWidget {
                           onTap: () {},
                           child: Container(
                             decoration: const BoxDecoration(
-                                color: Colors.pinkAccent,
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.black12,
+                                      spreadRadius: 2,
+                                      blurRadius: 10,
+                                      blurStyle: BlurStyle.solid)
+                                ],
+                                color: Color(0xffE41376),
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(5))),
                             alignment: Alignment.center,
@@ -76,7 +84,14 @@ class HomePage extends StatelessWidget {
                           onTap: () {},
                           child: Container(
                             decoration: const BoxDecoration(
-                                color: Colors.pinkAccent,
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.black12,
+                                      spreadRadius: 2,
+                                      blurRadius: 10,
+                                      blurStyle: BlurStyle.solid)
+                                ],
+                                color: Color(0xffE41376),
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(5))),
                             alignment: Alignment.center,
@@ -94,8 +109,10 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
-            ConstrainedBox(
-              constraints: const BoxConstraints.expand(width: 600, height: 600),
+            Container(
+              height: size.height - 200,
+              width: 600,
+              constraints: const BoxConstraints(minHeight: 400),
               child: Image.asset(
                 'prototypingprocess-pana.png',
               ),

@@ -12,19 +12,11 @@ class MyApp extends StatelessWidget {
       scrollBehavior: AppScrollBehavior(),
       title: 'VsCode Portfolio',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xff01C8EE),
-          primary: const Color(0xff01C8EE),
-          background: const Color(0xff282a36),
-        ),
-        buttonTheme: const ButtonThemeData(
-          buttonColor: Color(0xff01C8EE), //  <-- dark color
-          textTheme: ButtonTextTheme.primary,
-        ),
+      theme: ThemeData.dark(
         useMaterial3: true,
       ),
-      darkTheme: ThemeData.dark(useMaterial3: true),
+      darkTheme: ThemeData(
+          colorScheme: const ColorScheme.dark(primary: Color(0xff01C8EE))),
       home: const VsCodePage(),
     );
   }

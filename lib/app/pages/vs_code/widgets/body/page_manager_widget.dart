@@ -62,7 +62,16 @@ class TriangularContainer extends StatelessWidget {
     return ClipPath(
       clipper: TriangularClipper(),
       child: Container(
-        color: Colors.pinkAccent,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Theme.of(context).colorScheme.primary,
+              const Color(0xffE41376),
+            ], // Cores do gradiente
+            begin: Alignment.bottomCenter,
+            end: Alignment.centerRight,
+          ),
+        ),
       ),
     );
   }

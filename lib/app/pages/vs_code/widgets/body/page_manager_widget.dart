@@ -36,7 +36,13 @@ class _PageManagerWidgetState extends State<PageManagerWidget> {
               controller: widget.controller,
               physics: const NeverScrollableScrollPhysics(),
               children: [
-                const HomePage(),
+                Container(
+                  color: Colors.black,
+                  child: const Stack(fit: StackFit.expand, children: [
+                    TriangularContainer(),
+                    HomePage(),
+                  ]),
+                ),
                 const AboutPage(),
                 Container(),
                 Container(color: Colors.transparent),
@@ -45,5 +51,36 @@ class _PageManagerWidgetState extends State<PageManagerWidget> {
         ),
       ),
     );
+  }
+}
+
+class TriangularContainer extends StatelessWidget {
+  const TriangularContainer({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ClipPath(
+      clipper: TriangularClipper(),
+      child: Container(
+        color: Colors.pinkAccent,
+      ),
+    );
+  }
+}
+
+class TriangularClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    Path path = Path();
+    path.moveTo(0, size.width);
+    path.lineTo(size.width, size.height);
+    path.lineTo(size.width, 0);
+    path.close();
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) {
+    return false;
   }
 }

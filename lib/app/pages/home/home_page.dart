@@ -6,33 +6,38 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.only(left: 15),
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 50),
         child: Wrap(
+          crossAxisAlignment: WrapCrossAlignment.center,
+          alignment: WrapAlignment.spaceEvenly,
           children: [
-            ConstrainedBox(
-              constraints: BoxConstraints.loose(const Size.fromWidth(370)),
+            Container(
+              width: MediaQuery.of(context).size.width * .4,
+              constraints: const BoxConstraints(minWidth: 500),
+              padding: const EdgeInsets.only(bottom: 50),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   const Text(
                     'Gabrielle Demberck',
                     style: TextStyle(
-                        fontSize: 54.0,
+                        fontSize: 80.0,
                         fontWeight: FontWeight.bold,
                         height: 0.8),
+                    textAlign: TextAlign.center,
                   ),
                   SizedBox(
                     height: 100,
                     child: AnimatedTextKit(
                       animatedTexts: [
-                        TypewriterAnimatedText('FullStack Developer| Mobile',
+                        TypewriterAnimatedText('FullStack Developer | Mobile',
                             textStyle: const TextStyle(
                               fontSize: 34.0,
                               fontWeight: FontWeight.bold,
                             ),
+                            textAlign: TextAlign.center,
                             speed: const Duration(milliseconds: 200),
                             cursor: '|'),
                       ],
@@ -46,22 +51,41 @@ class HomePage extends StatelessWidget {
                   SizedBox(
                     height: 30,
                     child: Row(
+                      mainAxisSize: MainAxisSize.min,
                       children: [
-                        ElevatedButton(
-                          onPressed: () {},
-                          child: const Text(
-                            'About Me',
-                            style: TextStyle(fontSize: 18),
+                        InkWell(
+                          onTap: () {},
+                          child: Container(
+                            decoration: const BoxDecoration(
+                                color: Colors.pinkAccent,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(5))),
+                            alignment: Alignment.center,
+                            width: 150,
+                            height: 50,
+                            child: const Text(
+                              'About',
+                              style: TextStyle(fontSize: 18),
+                            ),
                           ),
                         ),
                         const SizedBox(
-                          width: 50,
+                          width: 20,
                         ),
-                        ElevatedButton(
-                          onPressed: () {},
-                          child: const Text(
-                            'Contact',
-                            style: TextStyle(fontSize: 18),
+                        InkWell(
+                          onTap: () {},
+                          child: Container(
+                            decoration: const BoxDecoration(
+                                color: Colors.pinkAccent,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(5))),
+                            alignment: Alignment.center,
+                            width: 150,
+                            height: 50,
+                            child: const Text(
+                              'Contact',
+                              style: TextStyle(fontSize: 18),
+                            ),
                           ),
                         )
                       ],
@@ -70,10 +94,11 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
-              width: 300,
-              height: 500,
-              color: Colors.amber,
+            ConstrainedBox(
+              constraints: const BoxConstraints.expand(width: 600, height: 600),
+              child: Image.asset(
+                'prototypingprocess-pana.png',
+              ),
             )
           ],
         ),

@@ -14,8 +14,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.deepPurple,
+          seedColor: const Color(0xff01C8EE),
+          primary: const Color(0xff01C8EE),
           background: const Color(0xff282a36),
+        ),
+        buttonTheme: const ButtonThemeData(
+          buttonColor: Color(0xff01C8EE), //  <-- dark color
+          textTheme: ButtonTextTheme.primary,
         ),
         useMaterial3: true,
       ),

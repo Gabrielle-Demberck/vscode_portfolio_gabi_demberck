@@ -27,8 +27,8 @@ class _BodyWidgetState extends State<BodyWidget> {
       child: Row(
         children: [
           Container(
-            height: size.height,
             width: 57,
+            height: size.height - 65,
             color: const Color(0xff343746),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

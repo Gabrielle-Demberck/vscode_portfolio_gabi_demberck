@@ -36,13 +36,10 @@ class _PageManagerWidgetState extends State<PageManagerWidget> {
               controller: widget.controller,
               physics: const NeverScrollableScrollPhysics(),
               children: [
-                Container(
-                  color: Colors.black,
-                  child: const Stack(fit: StackFit.expand, children: [
-                    TriangularContainer(),
-                    HomePage(),
-                  ]),
-                ),
+                const Stack(fit: StackFit.expand, children: [
+                  TriangularContainer(),
+                  HomePage(),
+                ]),
                 const AboutPage(),
                 Container(),
                 Container(color: Colors.transparent),

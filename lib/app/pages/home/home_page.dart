@@ -33,7 +33,7 @@ class HomePage extends StatelessWidget {
                     height: 100,
                     child: AnimatedTextKit(
                       animatedTexts: [
-                        TypewriterAnimatedText('FullStack Developer | Mobile',
+                        TypewriterAnimatedText('Software Engineer | Mobile',
                             textStyle: const TextStyle(
                               fontSize: 34.0,
                               fontWeight: FontWeight.bold,
@@ -57,17 +57,17 @@ class HomePage extends StatelessWidget {
                         InkWell(
                           onTap: () {},
                           child: Container(
-                            decoration: const BoxDecoration(
-                                boxShadow: [
+                            decoration: BoxDecoration(
+                                boxShadow: const [
                                   BoxShadow(
                                       color: Colors.black12,
                                       spreadRadius: 2,
                                       blurRadius: 10,
                                       blurStyle: BlurStyle.solid)
                                 ],
-                                color: Color(0xffE41376),
+                                color: Theme.of(context).colorScheme.primary,
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(5))),
+                                    const BorderRadius.all(Radius.circular(5))),
                             alignment: Alignment.center,
                             width: 150,
                             height: 50,
@@ -83,17 +83,17 @@ class HomePage extends StatelessWidget {
                         InkWell(
                           onTap: () {},
                           child: Container(
-                            decoration: const BoxDecoration(
-                                boxShadow: [
+                            decoration: BoxDecoration(
+                                boxShadow: const [
                                   BoxShadow(
                                       color: Colors.black12,
                                       spreadRadius: 2,
                                       blurRadius: 10,
                                       blurStyle: BlurStyle.solid)
                                 ],
-                                color: Color(0xffE41376),
+                                color: Theme.of(context).colorScheme.primary,
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(5))),
+                                    const BorderRadius.all(Radius.circular(5))),
                             alignment: Alignment.center,
                             width: 150,
                             height: 50,
@@ -109,12 +109,15 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
-              height: size.height - 200,
-              width: 600,
-              constraints: const BoxConstraints(minHeight: 400),
-              child: Image.asset(
-                'prototypingprocess-pana.png',
+            Visibility(
+              visible: size.width >= 1000,
+              child: Container(
+                height: size.height - 200,
+                width: 600,
+                constraints: const BoxConstraints(minHeight: 400),
+                child: Image.asset(
+                  'prototypingprocess-pana.png',
+                ),
               ),
             )
           ],
